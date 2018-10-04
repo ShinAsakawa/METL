@@ -1,8 +1,3 @@
----
-author: Shin Asakawa
-title: METL
----
-
 # METL
 
 METL is a (M)odified ETL Japanese handwriting characters dataset.
