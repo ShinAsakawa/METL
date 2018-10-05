@@ -317,24 +317,24 @@ def get_data(filename, forceDownload=False):
         'ETL4_labels.pk':   78711,
         'ETL5_labels.pk':   78815,
         'ETL6_labels.pk': 1894464,
-        'ETL7_labels.pk': 1694682,        
+        'ETL7_labels.pk':  402509,
         'ETL8G_labels.pk':2296214,
         'ETL9G_labels.pk':9094257,
-        
+
         'ETL1_images.hdf5':  195959939,
         'ETL3_images.hdf5':   34910270,
         'ETL4_images.hdf5':   20536116,
         'ETL5_images.hdf5':   20669680,
-        'ETL6_images.hdf5':   66066244,
-        'ETL7_images.hdf5':  311835441,
+        'ETL6_images.hdf5':  311835441,
+        'ETL7_images.hdf5':   66066244,
         'ETL8G_images.hdf5': 183864914,
         'ETL9G_images.hdf5': 721916431}
-    
+
     assert 'Invalid filename: {0}'.format(filename), filename in size_dict
     expected_size = size_dict[filename]
     path = os.getcwd()
     dest_filename = os.path.join(path, filename)
-    
+
     if os.path.exists(dest_filename):
         statinfo = os.stat(dest_filename)
         if statinfo.st_size != expected_size:
@@ -342,7 +342,7 @@ def get_data(filename, forceDownload=False):
             print("File {0} not expected size, forcing download".format(filename))
         else:
             print("File '{0}' allready downloaded.".format(filename))
-    
+
     if forceDownload == True or not os.path.exists(dest_filename):
         print('Attempting to download: {}'.format(filename)) 
         request.urlretrieve(url + '/' + filename, dest_filename)
