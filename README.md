@@ -7,7 +7,7 @@ METL is a (M)odified ETL Japanese handwriting characters dataset.
 - Yu Qiao's [page](https://www.gavo.t.u-tokyo.ac.jp/~qiao/database.html)
 
 
-All the images were convereted to 64 X 64 pixels gray scale
+All the images were convereted to 32 x 32 pixels gray scale
 
 first, you must download all the database:
 
