@@ -12,32 +12,23 @@ All the images were convereted to 64 X 64 pixels gray scale
 first, you must download all the database:
 
 ```python
-import METL
-METL.download_all()
+import numpy as np
+import METL as metl
+metl.get_data('ETL3.npz')
+a = np.load('ETL3.npz')
+X, y, _ = a['arr_0'].reshape(-1,32*32), a['arr_1']
+from sklearn.neuralnetwork import MLPClassifier as mlp
+model = mlp
+model.fit(X,y)
 ```
 
 When you want to use `ETL8G` database, you would type like:
-```
-ETL8G = METL.load_images_hdf5('ETL8G_images.hdf5')
-ETL8G_labels = METL.load_labels_pickle('ETL8G_labels.pk')
-```
-
 ```python
-ETL8G.shape
-len(ETL8G_labels)
-```
+metl.get_data('ETL8G.npz')
+ETL8G = np.load('ETL8g.npz')
 
-you would like to get belows:
-
-```
-(153916, 64, 64)
-153916
-```
-
-- When you want to convert the data to try `sklearn`, then you can try `.for_sklera()`:
-
-```python
-data, label = ETL.for_sklern('ETL8G_images.hdf5', 'ETL8G_labes.pk')
+for x in ETL8G:
+  prit(x, len(x))
 ```
 
 Enjoy!
